@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sablon</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dolgozó</h1>
+        
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary mt-3 mb-3" data-bs-toggle="modal" data-bs-target="#addModal">
+            Hozzáad
+        </button>
+
+
+        <table id="dolgozoTabla" 
+        class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Név</th>
+                    <th>Település</th>
+                    <th>Fizetés</th>
+                </tr>
+            </thead>
+            <tbody id="dolgozoTorzs">  <!-- ide generáljuk javascriptel a tábla elemeit-->
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+
+  
+  <!-- Add employe Modal window--> <!-- Ez a bs-nek a saját modal modulja /felugró ablak/ ezt copy/paste az oldalukról-->
+  <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Dolgozó hozzáadása</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">  <!-- ebbe rakjuk a saját kódunkat ami bekéri az új adatokat  -->
+          
+          <div class="addForm">
+            
+            <div class="mt-3">
+                <input type="text" placeholder="név"
+                id="name" class="form-control">
+            </div>
+            <div class="mt-3">
+                <input type="text" placeholder="település"
+                id="city" class="form-control">
+            </div>
+            <div class="mt-3">
+                <input type="text" placeholder="fizetés"
+                id="salary" class="form-control">
+            </div>
+
+ 
+        </div>
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezár</button>
+          
+          <button type="button" class="btn btn-primary"
+          id="addButton" data-bs-dismiss="modal">Mentés</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- Modify Modal window--> <!-- ez ua. mint a fenti csak ezt az adatok módosításra használjuk --> 
+    <div class="modal fade" id="modifyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Dolgozó módosítása</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            
+            <div class="addForm">
+
+              <div class="mt-3">
+                <input type="text" readonly
+                id="modifyId" class="form-control">
+            </div>
+
+              <div class="mt-3">
+                  <input type="text"
+                  id="modifyName" class="form-control">
+              </div>
+              <div class="mt-3">
+                  <input type="text"
+                  id="modifyCity" class="form-control">
+              </div>
+              <div class="mt-3">
+                  <input type="text"
+                  id="modifySalary" class="form-control">
+              </div>
+  
+   
+          </div>
+  
+  
+  
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezár</button>
+            
+            <button type="button" class="btn btn-primary"
+            id="modButton" data-bs-dismiss="modal">Mentés</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <script src="app.js"></script>    <!--belinkeljük a saját ...-->
+  <script src="js/bootstrap.js"></script> <!--..és a bootstarp javascriptjét is. Enélkül nem működik a modal-->
+
+</body>
+</html>
